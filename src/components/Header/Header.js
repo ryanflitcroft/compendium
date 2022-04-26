@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <header>
         <h1>
-          <span>Collection of</span>The Metropolitan Museum of Art
+          <span>Data provided by</span>Art Institute of Chicago API
         </h1>
       </header>
     </>
