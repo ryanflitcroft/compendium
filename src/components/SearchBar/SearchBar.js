@@ -2,13 +2,19 @@ import React from 'react';
 import { getCollection } from '../../services/fetch-utils';
 import './SearchBar.css';
 
-export default function SearchBar({ search, setSearch, setCollection }) {
+export default function SearchBar({
+  search,
+  setSearch,
+  setCollection,
+  setIsLoading,
+}) {
   function handleChange(e) {
     setSearch(e.target.value);
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     const results = await getCollection(search);
     setCollection(results);
   }

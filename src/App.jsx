@@ -13,14 +13,16 @@ export default function App() {
 
   useEffect(() => {
     async function getData() {
-      const data = await getCollection('warhol');
+      const data = await getCollection('');
       setCollection(data);
+      setIsLoading(false);
     }
     getData();
   }, []);
 
   useEffect(() => {
     setCollectionDisplay(collection);
+    setIsLoading(false);
   }, [collection]);
 
   return (
@@ -31,6 +33,8 @@ export default function App() {
         collectionDisplay={collectionDisplay}
         search={search}
         setSearch={setSearch}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
       />
       <Footer />
     </>

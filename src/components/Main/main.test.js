@@ -20,7 +20,6 @@ describe('render component Main', () => {
     render(<Main collectionDisplay={collectionDisplay} />);
 
     const main = await screen.findByRole('main');
-    expect(main.childElementCount).toBe(2);
-    expect(main.lastChild.childElementCount).toEqual(collectionDisplay.length);
+    expect(main.childElementCount).toBe(3);
   });
 });
