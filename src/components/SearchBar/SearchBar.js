@@ -1,23 +1,33 @@
 import React from 'react';
+import { getCollection } from '../../services/fetch-utils';
 import './SearchBar.css';
 
-export default function SearchBar({ search, setSearch }) {
+export default function SearchBar({ search, setSearch, setCollection }) {
   function handleChange(e) {
     setSearch(e.target.value);
   }
 
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const results = await getCollection(search);
+    setCollection(results);
+  }
+
   return (
     <>
-      <label htmlFor="search">
-        Search catalogue:
-        <input
-          type="text"
-          name="search"
-          placeholder="by artist or title"
-          value={search}
-          onChange={handleChange}
-        />
-      </label>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="search">
+          Browse catalogue:
+          <input
+            type="text"
+            name="search"
+            placeholder="artist, title, keyword"
+            value={search}
+            onChange={handleChange}
+          />
+          <button>Search</button>
+        </label>
+      </form>
     </>
   );
 }

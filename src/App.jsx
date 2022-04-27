@@ -13,16 +13,21 @@ export default function App() {
 
   useEffect(() => {
     async function getData() {
-      const data = await getCollection();
+      const data = await getCollection('warhol');
       setCollection(data);
     }
     getData();
   }, []);
 
+  useEffect(() => {
+    setCollectionDisplay(collection);
+  }, [collection]);
+
   return (
     <>
       <Header />
       <Main
+        setCollection={setCollection}
         collectionDisplay={collectionDisplay}
         search={search}
         setSearch={setSearch}

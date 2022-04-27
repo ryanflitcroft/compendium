@@ -1,6 +1,6 @@
-export async function getCollection() {
+export async function getCollection(query) {
   const res = await fetch(
-    'https://api.artic.edu/api/v1/artworks?fields=id,title,date_start,date_end,artist_title,artist_id,artwork_type_title,image_id&limit=100'
+    `https://api.artic.edu/api/v1/artworks/search?fields=id,title,date_start,date_end,artist_title,artist_id,artwork_type_title,image_id&limit=100&q=${query}`
   );
 
   const { data } = await res.json();

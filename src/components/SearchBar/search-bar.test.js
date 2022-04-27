@@ -7,13 +7,13 @@ describe('render component SearchBar', () => {
   it('should render elements label, input.', async () => {
     render(<SearchBar />);
 
-    const label = await screen.findByText(/search catalogue/i);
-    const input = await screen.findByPlaceholderText(/by artist or title/i);
+    const label = await screen.findByText(/browse catalogue/i);
+    const input = await screen.findByPlaceholderText(/artist, title, keyword/i);
   });
 
   it('should update input value on change', async () => {
     render(<App />);
-    const input = await screen.findByPlaceholderText(/by artist or title/i);
+    const input = await screen.findByPlaceholderText(/artist, title, keyword/i);
 
     userEvent.type(input, 'warhol');
     expect(input).toHaveValue('warhol');
@@ -26,7 +26,7 @@ describe('render component SearchBar', () => {
     };
 
     render(<SearchBar search={search} setSearch={setSearch} />);
-    const input = await screen.findByPlaceholderText(/by artist or title/i);
+    const input = await screen.findByPlaceholderText(/artist, title, keyword/i);
 
     userEvent.type(input, 'warhol');
     expect(search).toEqual('warhol');
