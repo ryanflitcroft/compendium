@@ -4,11 +4,13 @@ import App from '../../App';
 import SearchBar from './SearchBar';
 
 describe('render component SearchBar', () => {
-  it('should render elements label, input.', async () => {
+  it('should render elements form, label, input.', async () => {
     render(<SearchBar />);
 
+    const form = await screen.findByRole('form');
     const label = await screen.findByText(/browse catalogue/i);
     const input = await screen.findByPlaceholderText(/artist, title, keyword/i);
+    const button = await screen.findByRole('button');
   });
 
   it('should update input value on change', async () => {

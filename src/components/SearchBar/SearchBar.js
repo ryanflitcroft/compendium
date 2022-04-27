@@ -15,7 +15,10 @@ export default function SearchBar({ search, setSearch, setCollection }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        aria-label="search artist, title, or keyword"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="search">
           Browse catalogue:
           <input
