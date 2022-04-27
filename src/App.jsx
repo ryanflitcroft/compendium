@@ -13,7 +13,8 @@ export default function App() {
 
   useEffect(() => {
     async function getData() {
-      await getCollection();
+      const data = await getCollection();
+      setCollection(data);
     }
     getData();
   }, []);
