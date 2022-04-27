@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchBar.css';
 
 export default function SearchBar({ search, setSearch }) {
   function handleChange(e) {
@@ -8,10 +9,11 @@ export default function SearchBar({ search, setSearch }) {
   return (
     <>
       <label for="search">
+        Search catalogue:
         <input
           type="text"
           name="search"
-          placeholder="search by artist/title"
+          placeholder="by artist or title"
           value={search}
           onChange={handleChange}
         />
