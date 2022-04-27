@@ -1,4 +1,5 @@
 import React from 'react';
+import './CollectionList.css';
 import CollectionItem from '../CollectionItem/CollectionItem';
 
 export default function CollectionList({ collectionDisplay }) {

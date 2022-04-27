@@ -1,0 +1,18 @@
+figure {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+img {
+  width: 300px;
+  border: 0.5em solid whitesmoke;
+  box-shadow: 0.25em 0.25em 0.15em #d3d3d3;
+  margin: 0.5em 0;
+}
