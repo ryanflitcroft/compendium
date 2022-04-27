@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import CollectionList from './CollectionList';
+import Main from './Main';
 
-describe('render component CollectionList', () => {
+describe('render component Main', () => {
   const collectionDisplay = [
     {
       title: 'Four Mona Lisas',
@@ -16,11 +16,11 @@ describe('render component CollectionList', () => {
       imageId: '9a9737e3-c296-a2b5-4d76-d88f50a61ff8',
     },
   ];
+  it('should render elements main', async () => {
+    render(<Main collectionDisplay={collectionDisplay} />);
 
-  it('should render elements section, and a component CollectionItem for each item in collectionDisplay', async () => {
-    render(<CollectionList collectionDisplay={collectionDisplay} />);
-
-    const section = await screen.findByRole('region');
-    expect(section.childElementCount).toBe(2);
+    const main = await screen.findByRole('main');
+    expect(main.childElementCount).toBe(2);
+    expect(main.lastChild.childElementCount).toEqual(collectionDisplay.length);
   });
 });

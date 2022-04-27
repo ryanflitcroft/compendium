@@ -1,4 +1,4 @@
-import { findByRole, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Header from './Header';
 
 describe('render component Header', () => {
