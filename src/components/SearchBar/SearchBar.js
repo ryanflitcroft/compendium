@@ -8,7 +8,7 @@ export default function SearchBar({ search, setSearch }) {
 
   return (
     <>
-      <label for="search">
+      <label htmlFor="search">
         Search catalogue:
         <input
           type="text"
