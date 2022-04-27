@@ -4,7 +4,7 @@ import CollectionItem from '../CollectionItem/CollectionItem';
 export default function CollectionList({ collectionDisplay }) {
   return (
     <>
-      <section>
+      <section aria-label="catalogue list">
         {collectionDisplay.map((item, i) => (
           <CollectionItem key={`${item.title} - ${i}`} item={item} />
         ))}

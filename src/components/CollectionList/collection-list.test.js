@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { findByRole, render, screen, waitFor } from '@testing-library/react';
 import CollectionList from './CollectionList';
 
 describe('render component CollectionList', () => {
@@ -19,5 +19,8 @@ describe('render component CollectionList', () => {
 
   it('should render elements section, and a component CollectionItem for each item in collectionDisplay', async () => {
     render(<CollectionList collectionDisplay={collectionDisplay} />);
+
+    const section = await screen.findByRole('region');
+    expect(section.childElementCount).toBe(2);
   });
 });
